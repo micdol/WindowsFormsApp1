@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class form_mainWindow
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -32,8 +32,8 @@
             this.button_copyText = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.groupBox_color = new System.Windows.Forms.GroupBox();
-            this.radioButton_green = new System.Windows.Forms.RadioButton();
             this.radioButton_red = new System.Windows.Forms.RadioButton();
+            this.radioButton_green = new System.Windows.Forms.RadioButton();
             this.label_helloWorld = new System.Windows.Forms.Label();
             this.button_color = new System.Windows.Forms.Button();
             this.label_copiedText = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.button_showLabel.TabIndex = 0;
             this.button_showLabel.Text = "Show label";
             this.button_showLabel.UseVisualStyleBackColor = true;
+            this.button_showLabel.Click += new System.EventHandler(this.button_showLabel_Click);
             // 
             // button_copyText
             // 
@@ -68,6 +69,7 @@
             this.button_close.TabIndex = 0;
             this.button_close.Text = "Close";
             this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
             // groupBox_color
             // 
@@ -81,20 +83,10 @@
             this.groupBox_color.Text = "Set color: ";
             this.groupBox_color.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // radioButton_green
-            // 
-            this.radioButton_green.AutoSize = true;
-            this.radioButton_green.Location = new System.Drawing.Point(6, 42);
-            this.radioButton_green.Name = "radioButton_green";
-            this.radioButton_green.Size = new System.Drawing.Size(54, 17);
-            this.radioButton_green.TabIndex = 0;
-            this.radioButton_green.TabStop = true;
-            this.radioButton_green.Text = "Green";
-            this.radioButton_green.UseVisualStyleBackColor = true;
-            // 
             // radioButton_red
             // 
             this.radioButton_red.AutoSize = true;
+            this.radioButton_red.Checked = true;
             this.radioButton_red.Location = new System.Drawing.Point(6, 19);
             this.radioButton_red.Name = "radioButton_red";
             this.radioButton_red.Size = new System.Drawing.Size(45, 17);
@@ -102,6 +94,18 @@
             this.radioButton_red.TabStop = true;
             this.radioButton_red.Text = "Red";
             this.radioButton_red.UseVisualStyleBackColor = true;
+            this.radioButton_red.CheckedChanged += new System.EventHandler(this.radioButton_red_CheckedChanged);
+            // 
+            // radioButton_green
+            // 
+            this.radioButton_green.AutoSize = true;
+            this.radioButton_green.Location = new System.Drawing.Point(6, 42);
+            this.radioButton_green.Name = "radioButton_green";
+            this.radioButton_green.Size = new System.Drawing.Size(54, 17);
+            this.radioButton_green.TabIndex = 0;
+            this.radioButton_green.Text = "Green";
+            this.radioButton_green.UseVisualStyleBackColor = true;
+            this.radioButton_green.CheckedChanged += new System.EventHandler(this.radioButton_green_CheckedChanged);
             // 
             // label_helloWorld
             // 
@@ -114,11 +118,12 @@
             // 
             // button_color
             // 
+            this.button_color.BackColor = System.Drawing.Color.Red;
             this.button_color.Location = new System.Drawing.Point(109, 209);
             this.button_color.Name = "button_color";
             this.button_color.Size = new System.Drawing.Size(98, 70);
             this.button_color.TabIndex = 3;
-            this.button_color.UseVisualStyleBackColor = true;
+            this.button_color.UseVisualStyleBackColor = false;
             // 
             // label_copiedText
             // 
@@ -127,7 +132,6 @@
             this.label_copiedText.Name = "label_copiedText";
             this.label_copiedText.Size = new System.Drawing.Size(0, 13);
             this.label_copiedText.TabIndex = 2;
-            this.label_copiedText.Click += new System.EventHandler(this.label_copiedText_Click);
             // 
             // textBox_textToCopy
             // 
@@ -136,7 +140,7 @@
             this.textBox_textToCopy.Size = new System.Drawing.Size(100, 20);
             this.textBox_textToCopy.TabIndex = 4;
             // 
-            // Form1
+            // form_mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +153,7 @@
             this.Controls.Add(this.button_copyText);
             this.Controls.Add(this.button_showLabel);
             this.Controls.Add(this.button_close);
-            this.Name = "Form1";
+            this.Name = "form_mainWindow";
             this.Text = "Form1";
             this.groupBox_color.ResumeLayout(false);
             this.groupBox_color.PerformLayout();
